@@ -7,3 +7,6 @@
 [submodule "lib/spdlog"]
 	path = lib/spdlog
 	url = git@github.com:gabime/spdlog.git
+[submodule "lib/GLM"]
+	path = lib/GLM
+	url = https://github.com/g-truc/glm.git
