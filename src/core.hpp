@@ -14,6 +14,7 @@
 #include <optional>
 
 #include <array>
+#include <fstream>
 #include <map>
 #include <queue>
 #include <sstream>

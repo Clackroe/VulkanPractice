@@ -168,6 +168,17 @@ private:
     void createSwapChain();
     void createImageViews();
     void createGraphicsPipeline();
+    void createRenderPass();
+    void createFrameBuffers();
+    void createCommandPool();
+    void createCommandBuffer();
+    void createSynchObjects();
+
+    void drawFrame();
+
+    void recordCommandBuffer(VkCommandBuffer commandBuffer, u32 imageIndex);
+
+    VkShaderModule createShaderModule(std::vector<char>& shaderCode);
 
     void pickPhysicalDevice();
     void setupLogicalDevice();
@@ -185,8 +196,19 @@ private:
     std::vector<VkImage> m_SwapChainImages;
     VkFormat m_SwapChainImageFormat;
     VkExtent2D m_SwapChainExtent;
-
     std::vector<VkImageView> m_SwapChainImageViews;
+    std::vector<VkFramebuffer> m_SwapChainFramebuffers;
+
+    VkRenderPass m_RenderPass;
+    VkPipelineLayout m_PipelineLayout;
+    VkPipeline m_GraphicsPipeline;
+
+    VkCommandPool m_CommandPool;
+    VkCommandBuffer m_CommandBuffer;
+
+    VkSemaphore m_ImageAvailableSemaphore;
+    VkSemaphore m_RenderFinishedSemaphore;
+    VkFence m_InFlightFence;
 
     // Window
     GLFWwindow* m_NativeWindow;
